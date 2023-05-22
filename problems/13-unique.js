@@ -14,8 +14,15 @@ console.log(unique(['a', 'b', 'c', 'b'])); // ['a', 'b', 'c']
 
 */
 
+
 let unique = function(array) {
-    // Your code here
+
+const newArray = array.filter((v, i, self) => {
+    if(i == self.indexOf(v)){
+        return v
+    }
+})
+    return newArray;
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
@@ -24,4 +31,4 @@ try {
     module.exports = unique;
 } catch (e) {
     module.exports = null;
-}
+}

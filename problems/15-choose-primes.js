@@ -18,14 +18,27 @@ console.log(choosePrimes([5, 6, 4, 11, 2017])); // [ 5, 11, 2017 ]
 
 */
 
-let isPrime = function(num) {
-    // Your code here
-}
 
-let choosePrimes = function(nums) {
-    // Your code here
-}
+function findPrime(n){
+    if(n < 2){
+        return false
+    }
+    for(let i = 2; i < n; i++){
+        if(n % i === 0){
+            return false
+        }
+    }
+    return true
+  }
 
+
+  let choosePrimes = function(num) {
+    return num.filter(
+      function(n){
+        return findPrime(n) ? n : undefined;
+      }
+    )
+  }
 // alternative solution using Array.filter
 // let choosePrimes = function(nums) {
 //     return nums.filter(isPrime);
@@ -37,4 +50,4 @@ try {
     module.exports = choosePrimes;
 } catch (e) {
     module.exports = null;
-}
+}

@@ -15,9 +15,14 @@ console.log(maxWithReduce([-2, -3, -7, 3])); // 3
 */
 
 let maxWithReduce = function(nums) {
-    // Your code here
-};
 
+  const max = nums.reduce(function (accumulator, currentValue){
+    return accumulator > currentValue ? accumulator : currentValue;
+  })
+
+  return max;
+
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {

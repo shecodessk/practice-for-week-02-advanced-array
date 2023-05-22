@@ -26,8 +26,33 @@ console.log(twoDimensionalProduct(arr2)); // 88
 */
 
 let twoDimensionalProduct = function(arr) {
-    // Your code here
-};
+
+  const singleArray = arr.map(getProduct)
+  const final = singleArray.reduce(function(acc, val){
+    return acc * val
+  })
+
+  return final
+
+}
+
+let getProduct = (array) =>{
+
+  const totalProduct = array.reduce(function(acc, val){
+
+    if(array.length < 2){
+      return acc;
+    }
+
+     return acc * val
+  })
+
+  return totalProduct
+}
+
+
+
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
